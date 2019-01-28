@@ -81,6 +81,11 @@ header p{
 	width: 100%;
 	padding: 10px;
 }
+.start .gif{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
 .start .info{
 	width: 100%;
 	background: white;
