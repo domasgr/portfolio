@@ -1,0 +1,620 @@
+<html>   
+    <head>
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+        <!-- <link rel="stylesheet" href="main.css"> -->
+        <style>
+            *,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: all .2s;
+}
+a:hover{
+    color:#8cf38c; 
+}
+h2{
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+h3{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+h4{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+html{
+    font-size: 62.5%;
+    zoom: 140%;
+}
+body{
+    position: relative;
+    box-sizing: border-box;
+    font-weight: 100;
+    line-height: 1.7;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
+
+}
+.container{
+    position: relative;
+    width: 580px;
+    margin: 40px auto;
+    padding: 5px;
+    background: grey;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+}
+.backToPortfolio{
+    position: fixed;
+    left: 25px;
+    top: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #b19db0;
+    color: white;
+    font-weight: 500;
+    padding: 6px;
+    transition: .2s all;
+}
+.backToPortfolio:hover{
+    background: #987796;
+    transform: scale(1.1);
+}
+header{
+    width: 100%;
+}
+    header .photo{
+        width: 100px;
+        height: 100px;
+        background-color: #9b9b9b;
+        float: left;       
+    }
+    header .personal-info{
+        position: relative;
+        width: 470px;
+        height: 100px;
+        float: left;
+    }
+    header .personal-info-links{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 123%;
+        height: 131%;
+        padding-top: 2.3rem;
+        padding-left: .6rem;
+        -webkit-clip-path: polygon(0 0, 10% 0, 35% 100%, 0% 100%);
+        clip-path: polygon(0 0, 10% 0, 35% 100%, 0% 100%);
+        background: #b19db0;
+        font-weight: 400;
+        z-index: 5;
+    }
+        .personal-info-links .title{
+            position: absolute;
+            bottom: 0;
+            margin-left: 5rem;
+            font-size: 1.6rem;
+        }
+    header .personal-info-main{
+        -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 100%);
+        clip-path: polygon(10% 0, 100% 0, 100% 100%, 35% 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #9b9b9b;
+        width: 100%;
+        height: 100%;
+        text-align: center;    
+        
+    }
+    header .personal-info .name{
+        text-transform: uppercase;
+        font-weight: 100;
+        font-size: 2.2rem;
+    }
+    header .personal-info .contacts{
+        text-align: start;
+        padding-left: 26rem;
+    }
+    header .personal-info .fas,
+    header .personal-info .fab{
+        font-size: .8rem;
+        margin-right: 3px;
+
+
+    }
+    header .personal-info .contacts p{
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    header::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+
+
+
+
+main.summary{
+    -webkit-clip-path: polygon(100% 0, 100% 80%, 90% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 80%, 90% 100%, 0 100%, 0 0);
+    font-weight: 300;
+    padding: 5px;
+    width: 90%;
+    margin: 10px auto;
+    background: white;
+    color: black;
+    padding-top: 2.5rem;
+}
+
+.skills{
+    font-weight: 300;
+    padding: 1%;
+    width: 90%;
+    margin: 10px auto;
+    background: #9b9b9b;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+}
+.skills h2{
+    text-align: center;
+}
+    .soft-skills{
+        width: 30%;
+        padding: .9rem;
+        background: #e6e6e6;
+        border-radius: 20px;
+        color: black;
+        box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+    }
+    .soft-skills li, .other-computer-skills li, .interests li{
+        padding-left: 1.2rem;
+    }
+.skills ul{
+    list-style: none;
+}
+    .programming-skills{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: .9rem;
+        width: 100%;
+        background: #e6e6e6;
+        color: black;
+        border-radius: 20px;
+        box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+    }
+    .programming-skills .languages{
+        display: flex;
+        justify-content: space-around;
+    }
+.languages .language{
+    width: 90px;
+    background: #d1d1d1;
+    border-radius: 20px;
+}
+.languages li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 6px;
+    height: 25px;
+    background: aliceblue;
+    border-radius: 15px;
+    width: 80px;
+}
+.languages li p{
+    margin-right: 4px;
+}
+.language h4{
+    text-align: center;
+}
+.wrap-only-lang{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: aliceblue;
+    border-radius: 20px;
+    width: 80px;
+    margin: 3px auto;
+    padding-bottom: 3px;
+
+}
+
+
+
+.other-computer-skills{
+    width: 50%;
+    padding: .9rem;
+    background: #e6e6e6;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+
+}
+
+
+
+.knowledge{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    color: black;
+    margin-bottom: 1rem;
+}
+
+
+.knowledge .subject ul{
+    list-style: none;
+}
+.knowledge .education{
+    width: 63%;
+    background: #e6e6e6;
+    list-style: none;
+    padding: .9rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+}
+.knowledge .languages2{
+    width: 100%;
+    background: #e6e6e6;
+    padding: .9rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+}
+    .language2:nth-of-type(1) span{
+        border-bottom: 2px solid #8cf38c; 
+    }
+    .language2:nth-of-type(2) span{
+        border-bottom: 2px solid #50e1e1;
+    }
+.subject{
+    background: #d1d1d1;
+    border-radius: 20px;
+    padding: .9rem;
+    text-align: center;
+    font-weight: 300;
+    
+}
+.subject:not(:last-of-type){
+    margin-bottom: 1rem;
+}
+.subject span{
+    font-size: .9rem;
+    background: aliceblue;
+    margin-left: 1rem;
+}
+.subject li{
+    background: aliceblue;
+    border-radius: 20px;
+    padding: .5rem;
+}
+.subject li:not(:last-of-type){
+    margin-bottom: .4rem;
+}
+.subject h4{
+    font-size: 1.3rem;
+}
+.subject h5{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+
+
+.side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 33%;
+    font-weight: 300;
+   
+}
+.side .interests{
+    width: 100%;
+    background: #e6e6e6;
+    padding: .9rem;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px -8px rgba(0,0,0,0.75);
+}
+    .interests ul{
+        list-style: none;
+    }
+    .interests .fas{
+        margin-right: 3px;
+        font-size: 8px;
+        color: #7e7e7e;
+    }
+
+
+
+
+/*************RATING CIRCLE*****************/
+.circle-wrap{
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: aliceblue;
+    overflow: hidden;
+    display: inline-block;
+    border: 2px solid grey;
+    box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
+  }
+  .circle1{
+    width: 100%;
+    height: 100%;
+    background: #8cf38c;
+    position: absolute;
+    bottom:0;
+   
+    margin-top: -2px;
+  }
+  .circle2{
+    width: 100%;
+    height: 80%;
+    background: #50e1e1;
+    position: absolute;
+    bottom:0;
+   
+    margin-top: -2px;
+  }
+  .circle3{
+    width: 100%;
+    height: 60%;
+    background:#f1f195;
+    position: absolute;
+    bottom:0;
+   
+    margin-top: -2px;
+  }
+
+
+  .wrap-flex{
+      display: flex;
+      justify-content: space-around;
+  }
+        </style>
+    </head>
+
+    <body>
+        <a href="https://dominykas-grubys.netlify.com/"><div class="backToPortfolio">Back to portfolio</div></a>
+        <!-- <div class="javascript">
+            <div class="js">JavaScript</div>
+            <span class="es">ES20</span>
+            <div class="all-es">                
+                <span class="es15">15</span>
+                <span class="es16">16</span>
+                <span class="es17">17</span>
+            </div>           
+        </div>    -->
+        <div class="container">
+            
+            <header>
+                <div class="photo"></div>
+                <div class="personal-info">
+                    <div class="personal-info-links">
+                        <a target="_blank" href='https://github.com/domasgr'><p class="link"><i class="fab fa-github"></i>github</p></a>
+                        <a target="_blank" href="https://www.linkedin.com/in/dominykas-grubys-ba547a136/"><p class="link"><i class="fab fa-linkedin"></i>linkedin</p></a>
+                        <a target='_blank' href="https://dominykas-grubys.netlify.com/"><p class="link"><i class="fas fa-globe-europe"></i>portfolio</p></a>
+                        <p class="title">ABOUT ME</p>
+                    </div>
+                    <div class="personal-info-main">
+                        <h1 class="name">Dominykas Grubys</h1>
+                        <div class="contacts">
+                            <p class="contact"><i class="fas fa-map-marker"></i>Lithuania, Kaunas</p>
+                            <p class="contact"><i class="fas fa-mobile"></i>861600272</p>
+                            <p class="contact"><i class="fas fa-envelope"></i>dominykas.grubys@gmail.com</p>
+                            <p class="contact"></p>
+                            <p class="contact"></p>
+                        </div>
+                    </div>      
+                </div>
+                              
+            </header>
+            
+            <main class="summary">
+                <p>
+                    I'm Junior Front-end developer with passion, urge to know more and be as competetive as I can in the field.  
+                </p>
+                <p>
+                    My favorite part of WEB app developement is related with direct user experience, design and aesthetics.
+                    So currently prioritising Front-end frameworks and libraries. Also learning Back-end to have decent holistic understanding of WEB app.
+                </p> 
+                <p>Fast, intuitive, clean and well designed web application is what im seeking for.</p>               
+            </main>
+            <div class="skills">
+                    <h2>SKILLS</h2>
+                    <div class="programming-skills">
+                            <h3>Programming skills</h3>
+                            <div class="languages">
+                                <div class="language">
+                                    <h4>Javascript</h4>
+                                    <ul>
+                                        <li>
+                                            <p>Vanilla JS</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>React.js</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>jQuery</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>Redux.js</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle3'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>Node.js</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle3'></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="language">
+                                    <h4>Databases</h4>
+                                    <ul>
+                                        <li>
+                                            <p>MongoDB</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>MySQL</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle3'></div>
+                                            </div>                            
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="language">
+                                    <h4>CSS</h4>
+                                    <ul>
+                                        <li>
+                                            <p>Vanilla CSS</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle1'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>SASS</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>Bootstrap 4</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle2'></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p>Semantic UI</p>
+                                            <div class='circle-wrap'>
+                                                <div class='circle3'></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>                       
+                                <div class="language">
+                                    <div class="wrap-only-lang">
+                                        <h4>HTML</h4>
+                                        <div class='circle-wrap'>
+                                            <div class='circle1'></div>
+                                        </div>
+                                    </div>                        
+                                </div>
+                                <div class="language">
+                                    <div class="wrap-only-lang">
+                                        <h4>PHP</h4>
+                                        <div class='circle-wrap'>
+                                            <div class='circle3'></div>
+                                        </div>
+                                    </div>             
+                                </div>   
+                            </div>
+                                
+                                
+                        </div>
+                        <div class="wrap-flex">
+                                <div class="soft-skills">
+                                    <h3>Soft skills</h3>
+                                    <ul>
+                                        <li>Problem solving</li>
+                                        <li>Creative</li>
+                                        <li>Enthusiastic</li>
+                                        <li>Willingness to learn</li>
+                                        <li>Innovative</li>
+                                    </ul>
+                                </div>
+                                <div class="other-computer-skills">
+                                        <h3>Other computer skills</h3>
+                                        <ul>
+                                            <li>Adobe Premier</li>
+                                            <li>Adobe Photoshop</li>
+                                            <li>Adobe Premier</li>
+                                            <li>FL studio</li>
+                                        </ul>
+                                </div>
+                            </div>    
+                </div>
+                    
+                    
+                   
+
+            
+            <div class="knowledge">
+                    <div class="education">
+                        <h3>Education</h3>
+                            <div class="subject">
+                                <h4>2015 - 2018</h4>
+                                <h5>Medicine</h5>                    
+                                <p>Lithuanian university of health sciences, Kaunas, Lithuania</p>
+                            </div>
+                            <div class="subject">
+                                <h4>2018</h4>
+                                <h5>WEB development</h5>
+                                <p>Kaunas coding school, Kaunas, Lithuania</p>
+                            </div>
+                            <div class="subject">
+                                <h4>2018</h4>
+                                <h5>Udemy courses</h5>
+                                <ul>
+                                    <li>The Web developer bootcamp (HTML, CSS, JS, Node.js, Bootstrap)</li>
+                                    <li>Advanced CSS course (CSS, SASS)</li>
+                                    <li>The Advanced web developer bootcamp (AJAX, ES2015, ES2016, ES2017, Node.js, React.js, ReactRouter.js, Redux.js)</li>
+                                </ul>
+                            </div>
+                    </div>
+                    <div class="side">
+                        <div class="languages2">
+                            <h3>Languages</h3>
+                            <div class="language2">Lithuanian: <span> NATIVE</span></div>
+                            <div class="language2">English: <span> PROFESSIONAL</span></div>
+                        </div>
+                        <div class="interests">
+                            <h3>Interests</h3>
+                            <ul>
+                                <li><i class="fas fa-microchip"></i>Computer science</li>
+                                <li><i class="fas fa-microscope"></i>Biology</li>
+                                <li><i class="fas fa-book"></i>Reading</li>
+                                <li><i class="fas fa-headphones"></i>Music</li>
+                                <li><i class="fas fa-gamepad"></i>Video games</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    </body>
+</html>

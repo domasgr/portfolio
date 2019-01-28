@@ -34,6 +34,7 @@ a, a:visited{
 	padding-right: 20px;
 }*/
 header{
+	position: relative;
  	width: 1000px;
   	margin: 0 auto;
     text-align: center;
@@ -41,6 +42,24 @@ header{
     margin-bottom: 18px;
     padding: 5px;
 }
+header .resume{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #c92158;
+	width: 100px;
+	height: 100%;
+	-webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+	clip-path: polygon(100% 0, 0 0, 100% 100%);
+	font-size: 25px;
+    color: white;
+    padding-top: 25px;
+    padding-left: 41px;
+    transition: all .2s;
+}
+	.resume:hover{
+		background: #9e3356;
+	}
 header p{
 	font-size: 11px;
 }
@@ -56,6 +75,19 @@ header p{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+}
+.start{
+	height: 100px;
+	width: 100%;
+	padding: 10px;
+}
+.start .info{
+	width: 100%;
+	background: white;
+	height: 100%;
+	text-align: center;
+	box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.75);
+	padding-top: 15px;
 }
 .project-col-1, .project-col-2{
 	/*background: red;*/
@@ -94,11 +126,13 @@ header p{
 }
 .technical-description{
 	margin-top: 20px;
+	background: #00000061;
 }
 .technical-description h3{
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 8px;
+    text-align: center;
 }
 /*.front .technology{
 	padding: 5px;
@@ -139,6 +173,18 @@ header p{
 	font-size: 18px;
 	margin-bottom: 3px;
 }
+.back .flicker{
+	color: white;
+	animation: flicker 1.2s infinite ease;
+}
+@keyframes flicker{
+	0%{opacity: 1}
+	50%{opacity: 0}
+	100%{opacity: 1}
+}
+.linkToPage{
+	background: #9e9e9e;
+}
 .fab{
 	color: #c92158;
 }
@@ -147,6 +193,9 @@ header p{
 }
 .fab, .m-l{
 	margin-left: 7px;
+}
+.fa-react{
+	animation: rotate 10s linear infinite;
 }
 .btn{
 	display: block;
@@ -157,6 +206,13 @@ header p{
     padding: 13px;
     color: white;
     text-align: center;
+    -webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
+}
+@keyframes rotate{
+	0%{transform: rotate(0)}
+	100%{transform: rotate(360deg)}
 }
 @media (max-width: 1000px){
 	header{
