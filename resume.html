@@ -366,6 +366,7 @@ main.summary{
     border: 2px solid grey;
     box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
     z-index: 5;
+    animation: fadein 1s 1s backwards ease;
   }
   .circle1{
     width: 100%;
@@ -398,10 +399,16 @@ main.summary{
     animation: fillup 3s 2s backwards ease;
   }
   @keyframes fillup{
-    0%{transform: scaleY(0)}
-    100%{transform: scaleY(1);}
+    0%{transform: scaleY(0);}
+    100%{transform: scaleY(1);
+    }
   }
-
+  @keyframes fadein{
+    0%{opacity: 0.7;
+        transform: scale(0.3)}
+    100%{opacity: 1;
+        transform: scale(1)}
+  }
 
   .wrap-flex{
       display: flex;
