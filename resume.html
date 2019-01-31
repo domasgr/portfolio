@@ -365,6 +365,7 @@ main.summary{
     display: inline-block;
     border: 2px solid grey;
     box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.75);
+    z-index: 5;
   }
   .circle1{
     width: 100%;
@@ -372,7 +373,8 @@ main.summary{
     background: #8cf38c;
     position: absolute;
     bottom:0;
-   
+    transform-origin: 0 100%;
+   animation: fillup 1s 2s backwards ease;
     margin-top: -2px;
   }
   .circle2{
@@ -381,7 +383,8 @@ main.summary{
     background: #50e1e1;
     position: absolute;
     bottom:0;
-   
+    transform-origin: 0 100%;
+    animation: fillup 1s 2s backwards ease;
     margin-top: -2px;
   }
   .circle3{
@@ -390,8 +393,13 @@ main.summary{
     background:#f1f195;
     position: absolute;
     bottom:0;
-   
+    transform-origin: 0 100%;
     margin-top: -2px;
+    animation: fillup 2s 2s backwards ease;
+  }
+  @keyframes fillup{
+    0%{transform: scaleY(0)}
+    100%{transform: scaleY(1);}
   }
 
 
