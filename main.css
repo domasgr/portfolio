@@ -240,4 +240,9 @@ header p{
 	#projektugalerija{
 		height: 176px;
 	}
+	header{
+		font-size: 11px;
+    height: 100px;
+    padding-top: 25px;
+	}
 }
