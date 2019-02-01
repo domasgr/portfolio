@@ -220,7 +220,7 @@ main.summary{
 }
 .languages li{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0 auto;
     margin-bottom: 6px;
@@ -228,10 +228,9 @@ main.summary{
     background: aliceblue;
     border-radius: 15px;
     width: 80px;
+    padding: 0 4px;
 }
-.languages li p{
-    margin-right: 4px;
-}
+
 .language h4{
     text-align: center;
 }
@@ -422,7 +421,13 @@ main.summary{
       display: flex;
       justify-content: space-around;
   }
+  @media print{
+    body{
+        transform: scale(.6)
+    }
+  }
         </style>
+  
     </head>
 
     <body>
