@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
         <!-- <link rel="stylesheet" href="main.css"> -->
         <style>
-            *,
+*,
 *::after,
 *::before{
     margin: 0;
@@ -62,48 +62,78 @@ body{
 }
 .backToPortfolio{
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     left: 25px;
     top: 25px;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 16px;
     background: #b19db0;
     color: white;
     font-weight: 500;
     padding: 6px;
     transition: .2s all;
     z-index: 5;
+    overflow: hidden;
 }
+/* back to portfolio button effects */
 .backToPortfolio:hover{
     background: #987796;
     transform: scale(1.1);
 }
-#print{
+.backToPortfolio:hover:before{
+    opacity: 1;
+    transform: translate(0,0);
+
+}
+.backToPortfolio:before{
+    content: attr(data-hover);
+    position: absolute;
+    transform: translate(120%,0);
+    opacity: 0;
+    transition: all .3s ease-in-out;
+}
+.fa-chevron-left{
+    transition: all .3s ease-in-out;
+    font-size: 18px;
+}
+.backToPortfolio:hover .fa-chevron-left{
+    opacity: 0;
+    transform: translate(-500%, 0);
+}
+
+.print{
     position: fixed;
     width: 130px;
-    /* height: 100px; */
+    height: 84px; 
     background: #686868;
     font-size: 7px;
     top: 90px;
-    left: 5px;
+    left: 25px;
     padding: 5px;
     text-align: center;
     border-radius: 16px;
     z-index: 5;
+    overflow: hidden;
+    transition: all .3s ease;
 }
-#print .fa-print{
+.print .fa-print{
     font-size: 20px;
 }
-#print p{
+.print p{
     font-weight: 400;
+    animation: fade-in .5s ease;
+    padding: 2px 0;
 }
-#print p:nth-of-type(1){
+.print p:nth-of-type(1){
     color: #a4d5a4;
 }
-#print p:nth-of-type(2){
+.print p:nth-of-type(2){
     color: #f2b2b2;
 }
-#print button{
+.print button{
     border: none;
     font-size: 11px;
     padding: 4px;
@@ -111,6 +141,60 @@ body{
     outline: none;
     border-radius: 4px;
     z-index: 5;
+    animation: fade-in .5s ease;
+    background: #e6e6e6;
+}
+.print .minimize{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff4444;
+    top: 0;
+    right: -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    transition: all .2s ease;
+}
+.print .minimize:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+    .print-minimized{
+        position: fixed;
+        width: 50px;
+        height: 50px;
+        background: #686868;
+        font-size: 7px;
+        top: 90px;
+        left: 28px;
+        padding: 14px;
+        text-align: center;
+        border-radius: 16px;
+        z-index: 5;
+        transition: all .3s ease;
+    }
+    .print-minimized:hover{
+        transform: scale(1.1);
+        background: #535252;
+        cursor: pointer;
+    }
+    .display-none{
+        display: none;
+    }
+    .print .minimize.enlarge{
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+        background: transparent;
+    }
+@keyframes fade-in{
+    0%{opacity: 0;}
+    80%{opacity: 0;}
+    100%{opacity: 1;}
 }
 header{
     width: 100%;
@@ -484,6 +568,9 @@ main.summary{
     .backToPortfolio{
         display: none;
     }
+    .print{
+        display: none;
+    }
     #print{
         display: none;
     }
@@ -503,12 +590,13 @@ main.summary{
     </head>
 
     <body>
-        <a href="https://dominykas-grubys.netlify.com/"><div class="backToPortfolio">Back to portfolio</div></a>
-        <div id='print'>
+        <a href="https://dominykas-grubys.netlify.com/"><div data-hover="Portfolio" class="backToPortfolio"><i class="fas fa-chevron-left"></i></div></a>
+        <div class='print'>
+            <div class='minimize'><i class="fas fa-minus"></i></div>
             <i class="fas fa-print"></i>
-            <p>Patartina spausdinti per "Chrome" naršyklę</p>
-            <p>Spausdinant per "Firefox" sumažinti mastelį iki 90%</p>
-            <button onclick="printPortfolio()">SPAUSDINTI</button>
+            <p>Recomended printing on "Chrome"</p>
+            <p>On "Firefox" lower scale to 90%</p>
+            <button onclick="printPortfolio()">PRINT</button>
         </div>
         <!-- <div class="javascript">
             <div class="js">JavaScript</div>
@@ -733,6 +821,54 @@ main.summary{
         function printPortfolio(){
             window.print();
         }
+
+
+        const printE = document.querySelector(".print");
+        const ps = document.querySelectorAll(".print p");
+        const printBtn = document.querySelector(".print button");
+        const minimize = document.querySelector(".minimize");
+        const icon = document.querySelector(".fa-minus");
+        var selfClose = true;
+        
+         minimize.addEventListener("click", function(){
+            minimizePrintElement();
+        })
+        
+        
+        function minimizePrintElement(){
+            printE.classList.toggle("print-minimized");          
+            printBtn.classList.toggle("display-none");
+            minimize.classList.toggle("enlarge");
+            ps[0].classList.toggle("display-none");
+            ps[1].classList.toggle("display-none");
+            icon.classList.toggle("display-none");
+            selfClose = false;
+        }      
+        
+        (function() {
+                setTimeout(function(){
+                    if(selfClose){
+                        minimizePrintElement();
+                    }        
+                }, 3000)
+        })();
+        
+        
+        // function createMaximize(){
+        //     print.classList.add("maximize");
+        //     maximize = document.querySelector(".maximize");
+        //     maximize.addEventListener("click", function(){
+        //         print.classList.remove("print-minimized");
+        //         ps[0].classList.remove("display-none");
+        //         ps[1].classList.remove("display-none");
+        //         printBtn.classList.remove("display-none");
+        //         minimize.classList.remove("display-none");
+        //         print.classList.remove("maximize");
+        //     })
+        // }
+
+
+
     </script>
     </body>
 </html>

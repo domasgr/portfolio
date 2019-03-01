@@ -67,6 +67,7 @@ header p{
 
 .main{
 	width: 1000px;
+	min-height: 100vh; 
 	margin: 0 auto;
 	background: #efefef;
 }
@@ -77,9 +78,10 @@ header p{
 	justify-content: space-between;
 }
 .start{
-	height: 100px;
+	display: flex;
+	height: 200px;
 	width: 100%;
-	padding: 10px;
+	margin-bottom: 10px;
 }
 .start .gif{
 	height: 100px;
@@ -91,19 +93,19 @@ header p{
 	background: white;
 	height: 100%;
 	text-align: center;
-	box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
 	padding-top: 15px;
 }
 .project-col-1, .project-col-2{
 	/*background: red;*/
-	width: 49%;
+	width: 50%;
 	padding: 10px;
 }
 .project{
 	width: 100%;
 	/*padding: 15px;*/
 	background: white;
-	box-shadow: 0px 0px 38px -8px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
 }
 .project > *{
 	padding: 10px;
@@ -190,16 +192,16 @@ header p{
 .linkToPage{
 	background: #9e9e9e;
 }
-.fab{
+.projects .fab{
 	color: #c92158;
 }
-.fas{
+.projects .fas{
 	margin-right: 7px;
 }
-.fab, .m-l{
+.projects .fab, .m-l{
 	margin-left: 7px;
 }
-.fa-react{
+.projects .fa-react{
 	animation: rotate 10s linear infinite;
 }
 .btn{
@@ -211,9 +213,9 @@ header p{
     padding: 13px;
     color: white;
     text-align: center;
-    -webkit-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
-	-moz-box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
-	box-shadow: 0px 0px 40px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 8px -2px rgba(0,0,0,0.75);
 }
 @keyframes rotate{
 	0%{transform: rotate(0)}
@@ -245,4 +247,101 @@ header p{
     height: 100px;
     padding-top: 25px;
 	}
+}
+
+
+
+
+
+
+.name{
+	background: red;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
+	position: relative;
+}
+.name h1{
+	font-size: 53px;
+    font-weight: 800;
+    position: absolute;
+}
+/*.name h1 span{
+	position: absolute;
+    top: 6px;
+    left: 95px;
+}*/
+.name h3{
+	font-size: 26px;
+    font-weight: 400;
+    position: absolute;
+    top: 63px;
+    left: 90px;
+}
+.name p {
+	font-weight: 800;
+    font-size: 70px;
+    position: absolute;
+    bottom: 16px;
+    left: 48px;
+}
+.links{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.cube{
+	width: 112px;
+	height: 100%;
+	background: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
+}
+.cube:not(:last-child){
+	margin-right: 10px;
+}
+.email{
+	height: 100%;
+	width: 160px;
+	margin-right: 10px;
+	background: url("http://www.stickpng.com/assets/images/5847fafdcef1014c0b5e48ce.png");
+	background-size: cover;
+	color: white;
+	position: relative;
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
+	border-radius: 10px;
+}
+.cv{
+	height: 100%;
+	width: 330px;
+	background: black;
+	color: white;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 0px 13px -5px rgba(0,0,0,0.75);
+}
+.cv p{
+	font-size: 72px;
+	font-weight: 100;
+    position: absolute;
+    bottom: -28px;
+    right: -6px;
+}
+.items2{
+	display: flex;
+	height: 78px;
+	width: 100%;
+	
+}
+.items3{
+	display: flex;
+	height: 112px;
+	margin-bottom: 10px;
+}
+
+.start .fab{
+	color: white;
+	font-size: 34px;
 }
