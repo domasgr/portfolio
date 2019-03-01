@@ -79,7 +79,8 @@ header p{
 }
 .start{
 	display: flex;
-	height: 200px;
+	/* height: 200px; */
+	height: 100px;
 	width: 100%;
 	margin-bottom: 10px;
 }
@@ -285,11 +286,11 @@ header p{
     bottom: 16px;
     left: 48px;
 }
-.links{
+/* .links{
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-}
+} */
 .cube{
 	width: 112px;
 	height: 100%;
