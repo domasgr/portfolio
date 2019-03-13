@@ -104,6 +104,7 @@ const projects =
     [
         {
             id: "project-lietufy",
+            date: "2019-01-24",
             title: "lietufy.lt",
             img: "img/lietufym.png",
             desc1: "The list of lithuanian artists on the Spotify platform.",
@@ -127,6 +128,7 @@ const projects =
         },
         {
             id: "project-projektu-galerija",
+            date: "2018-11-20",
             title: "Projects gallery",
             img: "img/gallerym.png",
             desc1: "Web app with invidually built content management system for wood restoration and other projects.",
@@ -152,6 +154,7 @@ function projectTemplate(i){
         <div class="project" id="${projects[i].id}">
             <div class="project-information">
                 <div class="project-card">
+                    <span class="project-date"><i class="far fa-calendar-alt"></i> ${projects[i].date}</span>
                     <a href="${projects[i].link}" class="link project-visit"><div class="project-title">${projects[i].title}</div></a>
                     <img src="${projects[i].img}" alt="" class="project-img">
                 </div>
