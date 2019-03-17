@@ -915,6 +915,28 @@ ul > li:after {
 }
 
 
+.prepChatText{
+    top: 13px;
+    left: 12px;
+}
+.chat-text .prepChatH1{
+    font-size: 19px;
+    margin-bottom: 3px;
+}
+.chat-text .prepChatP{
+    font-size: 10px;
+}
+.prepChatIcon{
+    width: 30%;
+}
+#chat-display.prepChatDispl{
+    height: 200px;
+    opacity: 1;
+}
+
+
+
+
 
 
 
@@ -971,6 +993,18 @@ ul > li:after {
         .resume{
             font-size: 80px;
         }
+
+    .prepChatText{
+        top: 9px;
+        left: 7px;
+    }
+    .chat-text .prepChatH1{
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+    .chat-text .prepChatP{
+        font-size: 7px;
+    }
     
 }
 
@@ -992,6 +1026,8 @@ ul > li:after {
         padding-right: 0;
     }
     .chat{
+        margin-top: 50px;
+        margin-bottom: 37px;
         margin-right: 0;
         padding-right: 0;
     }
@@ -1022,14 +1058,95 @@ ul > li:after {
     .project-description{
         width: 100%;
         margin-top: 65px;
+        margin-left: 0;
     }
     .description-toggle{
         top: -45px;
+    }
+
+
+    .prepChatIcon{
+        width: 47%;
+    }
+    .prepChatText{
+        top: 12px;
+        left: 10px;
+    }
+    .chat-text .prepChatH1{
+        font-size: 23px;
+        margin-bottom: 0px;
+    }
+    .chat-text .prepChatP{
+        font-size: 13px;
     }
 }
 
 @media (max-width: 450px){
     .nav-item{
         font-size: 25px;
+    }
+}
+
+@media (max-width: 365px){
+    .chat{
+        width: 276px;
+    }
+    .chat-text{
+        top: 10px;
+        left: 18px;
+    }
+
+    .chat-questions div{
+        font-size: 11px;
+    }
+
+
+    .links{
+        width: 296px;
+        height: 180px;
+    }
+        .linkedin{
+            font-size: 44px;
+            top: 7px;
+            left: 47px;
+        }
+        .email{
+            font-size: 30px;
+            top: 62px;
+            right: 86px;
+        }
+        .github{
+            font-size: 35px;
+            top: 83px;
+            left: 19px;
+        }
+        .resume{
+            font-size: 52px;
+            bottom: 0;
+            right: 0;
+        }
+       
+    .nav-item{
+        font-size: 23px;
+    }
+
+    #q1, #q3, #q5{
+        margin-bottom: 3px;
+    }
+
+    .prepChatText{
+        top: 10px;
+        left: 9px;
+    }
+    .chat-text .prepChatH1{
+        font-size: 16px;
+        margin-bottom: 0px;
+    }
+    .chat-text .prepChatP{
+        font-size: 10px;
+    }
+
+    .project-description{
+        font-size: 20px;
     }
 }
