@@ -393,9 +393,9 @@ function daysBetween(json){
 }
 
 
-document.querySelector("#alertX").onclick = function(){
-    document.querySelector(".alert").style.display = "none";
-}
+// document.querySelector("#alertX").onclick = function(){
+//     document.querySelector(".alert").style.display = "none";
+// }
 
 
 
