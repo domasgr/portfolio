@@ -234,6 +234,7 @@ function showProject(i){
         }
         toggleDescriptionInfo();  
 }
+
 function createProjectsNavigation(numOfProjects){
     let projectNav = document.getElementById("projectNav");
     projectNav.innerHTML = "";
@@ -250,119 +251,89 @@ function createProjectsNavigation(numOfProjects){
 
 
 }
-    // FILL front end technologies list
+
+function prepInteractiveChat() {
+    document.querySelector(".chat-text").classList.add("prepChatText");
+
+    document.querySelector(".chat-text h1").classList.add("prepChatH1");
+
+    let p = document.querySelectorAll(".chat-text p");
+    for(let i = 0; i < p.length; i++){
+        p[i].classList.add("prepChatP");
+    }
+
+    document.querySelector(".chat-icon").classList.add("prepChatIcon");
+
+    document.querySelector("#chat-display").classList.add("prepChatDispl");
+}
+
+function chat(){
+
+    let jsonAnswers = {
+        "q1": "I'm learning to code for 5 months now :)",
+        "q2": "I love creating user interface and user expirience, I'm getting so many ideas related with it and I'm having a lot of fun while trying to realise them. Also I'm still programming all my projects back-end on my own. Maybe the day will come when I will be able to call myself a full-stack developer :)",
+        "q3": "Check my resume, I'm listing and updating all technologies I learn. Also you can take a look at my projects technical descriptions.",
+        "q4": "Probably it's CSS and Javascript animations. Especially I love those which simulates real-life physics. I think animations used in good taste boosts user expirience A LOT!",
+        "q5": "This month most of my time I'am spending on plain Javascript (solving lots of exercises) and Angular framework (reading documentation and experimentating).",
+        "q6": "For now my main goal is to get a full-time Junior Front-end position and start to improve even faster while working on some bigger projects.",
+        "q7": "Of course you should! Now I'm searching for projects to add to my portfolio and I will make sure these projects will have not only clean and professional code, but also a lot of creativity and originality."
+    }
+
+    daysBetween(jsonAnswers);
+
+    let userMessages = document.querySelectorAll(".message");
+    for(let i = 0; i < userMessages.length; i++){
+        userMessages[i].onclick = function(){
+            if(interactiveChat === false){
+                prepInteractiveChat();
+                interactiveChat = true;
+                setTimeout(function(){
+                    question(userMessages[i].id)
+                }, 1000)
+            }else{
+            question(userMessages[i].id)}
+        }
+        
+    }
+
+    function question(id){
+        let questionText = document.querySelector("#"+id).textContent;
+
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        let divText = document.createTextNode(questionText);
+
+        div.appendChild(divText);
+            div.classList.add("msg", "user");
+        li.appendChild(div);
+
+        let messagesBox = document.querySelector("#messages")
+        messagesBox.appendChild(li);
+        messagesBox.scrollTop = messagesBox.scrollHeight;
+
+        setTimeout(function(){
+            console.log("timeout"+id)
+            answer(id);
+        }, 500)
+    }
+
+    function answer(id){
     
-    // for(projects){}
+        let answerText = jsonAnswers[id];
+        console.log(answerText)
+        let li = document.createElement("li");
+        let div = document.createElement("div");
+        let divText = document.createTextNode(answerText);
 
+        div.appendChild(divText);
+            div.classList.add("msg", "me");
+        li.appendChild(div);
 
-
-
-
-    function prepInteractiveChat(){
-        document.querySelector(".chat-text").style.top = "13px";
-        document.querySelector(".chat-text").style.left = "12px";
-
-        document.querySelector(".chat-text h1").style.fontSize = "19px";
-        document.querySelector(".chat-text h1").style.marginBottom = "3px";
-
-            let p = document.querySelectorAll(".chat-text p");
-            for(let i = 0; i < p.length; i++){
-                p[i].style.fontSize = "10px";
-            }
-        
-        document.querySelector(".chat-icon").style.width = "30%";
-
-        document.querySelector("#chat-display").style.cssText = "height: 200px; opacity: 1;";
+        let messagesBox = document.querySelector("#messages")
+        messagesBox.appendChild(li);
+        messagesBox.scrollTop = messagesBox.scrollHeight;
     }
-
- 
-    // var t = document.querySelector("#q1");
-    // t.onclick =  function(){
-    //     var at = document.createTextNode("Helloooo")
-    //     var a = document.createElement("div")
-    //     let li = document.createElement("li")
-    //     a.appendChild(at)
-    //     li.appendChild(a)
-    //     a.classList.add("msg");
-    //     document.querySelector("#messages").appendChild(li);
-    //}
-
-    function chat(){
-        
-        let jsonAnswers = {
-            "q1": "I'm learning to code for 5 months now :)",
-            "q2": "I love creating user interface and user expirience, I'm getting so many ideas related with it and I'm having a lot of fun while trying to realise them. Also I'm still programming all my projects back-end on my own. Maybe the day will come when I will be able to call myself a full-stack developer :)",
-            "q3": "Check my resume, I'm listing and updating all technologies I learn. Also you can take a look at my projects technical descriptions.",
-            "q4": "Probably it's CSS and Javascript animations. Especially I love those which simulates real-life physics. I think animations used in good taste boosts user expirience A LOT!",
-            "q5": "This month most of my time I'am spending on plain Javascript (solving lots of exercises) and Angular framework (reading documentation and experimentating).",
-            "q6": "For now my main goal is to get a full-time Junior Front-end position and start to improve even faster while working on some bigger projects.",
-            "q7": "Of course you should! Now I'm searching for projects to add to my portfolio and I will make sure these projects will have not only clean and professional code, but also a lot of creativity and originality."
-        }
-        daysBetween(jsonAnswers);
-
-        let userMessages = document.querySelectorAll(".message");
-        for(let i = 0; i < userMessages.length; i++){
-            userMessages[i].onclick = function(){
-                if(interactiveChat === false){
-                    prepInteractiveChat();
-                    interactiveChat = true;
-                    setTimeout(function(){
-                        question(userMessages[i].id)
-                    }, 1000)
-                }else{
-                question(userMessages[i].id)}
-            }
-            
-        }
-        function question(id){
-            let questionText = document.querySelector("#"+id).textContent;
-
-            let li = document.createElement("li");
-            let div = document.createElement("div");
-            let divText = document.createTextNode(questionText);
-
-            div.appendChild(divText);
-                div.classList.add("msg", "user");
-            li.appendChild(div);
-
-            let messagesBox = document.querySelector("#messages")
-            messagesBox.appendChild(li);
-            messagesBox.scrollTop = messagesBox.scrollHeight;
-
-            setTimeout(function(){
-                console.log("timeout"+id)
-                answer(id);
-            }, 500)
-        }
-
-        function answer(id){
-           
-            let answerText = jsonAnswers[id];
-            console.log(answerText)
-            let li = document.createElement("li");
-            let div = document.createElement("div");
-            let divText = document.createTextNode(answerText);
-
-            div.appendChild(divText);
-                div.classList.add("msg", "me");
-            li.appendChild(div);
-
-            let messagesBox = document.querySelector("#messages")
-            messagesBox.appendChild(li);
-            messagesBox.scrollTop = messagesBox.scrollHeight;
-        }
-    }
-
-
-
-    function copyEmail(){
-        
-    }
-
-
-
-
-
+}
 
 
 function daysBetween(json){
@@ -392,13 +363,6 @@ function daysBetween(json){
     json.q1 = str;
 }
 
-
-// document.querySelector("#alertX").onclick = function(){
-//     document.querySelector(".alert").style.display = "none";
-// }
-
-
-
 const copyToClipboard = str => {
     const el = document.createElement('textarea');  // Create a <textarea> element
     el.value = str;                                 // Set its value to the string that you want copied
@@ -418,7 +382,7 @@ const copyToClipboard = str => {
       document.getSelection().addRange(selected);   // Restore the original selection
     }
     emailCopyAlert();
-  };
+};
 
 document.querySelector(".email").onclick = function(){
     copyToClipboard("dominykas.grubys@gmail.com");
